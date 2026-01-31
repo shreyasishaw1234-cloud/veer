@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love for Veer</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff69b4, #ffb6c1);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 2em;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .message {
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .submessage {
+            font-size: 1.5em;
+            color: #fffacd;
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Veer, Shrii loves you ssoooooooo muchh.</div>
+    <div class="submessage">You keep her happy. She needs you every time. I want us to be together forever Veer.. Mwahhhh. I hate you betaaaa <3</div>
+    
+    <script>
+        // Generate floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+        
+        // Create hearts every 500ms
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
